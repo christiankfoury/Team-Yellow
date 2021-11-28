@@ -54,3 +54,48 @@ input[type="submit"] {
     /* padding: 0.5em; */
     border-radius: 0.25em;
 }
+
+.nav-pills .nav-link {
+    border-radius: 0rem;
+}
+
+/* .welcome {
+
+} */
+
+div.white-box-2 {
+    background-color: white;
+    width: 150rem;
+    min-height: 70rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.title {
+    width: fit-content;
+    background-color: #999999;
+    padding: 0.5em;
+    padding-left: 6em;
+    padding-right: 6em;
+    border-radius: 1em;
+    color: white;
+}
+
+.grey-button {
+    margin-left: 2em;
+    margin-top: 2em;
+    background: #ebebeb;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: #e61610;
+    text-decoration: none;
+    display: table;
+}
+
+.grey-button:hover {
+    background: #e61610;
+    color: white;
+}
