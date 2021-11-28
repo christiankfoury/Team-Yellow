@@ -34,7 +34,7 @@ h1.login-title {
     color: #e61610;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"].login, input[type="password"].login {
     width: 25em;
     font-size: 1.75em;
     padding: 0.25em;
@@ -47,7 +47,7 @@ label.login {
     margin-bottom: 0.5em;
 }
 
-input[type="submit"] {
+input[type="submit"].login-button {
     width: 50%;
     margin-top: 2em;
     background: #e61610;
@@ -64,6 +64,14 @@ input[type="submit"] {
 /* .welcome {
 
 } */
+
+.navigation-bar {
+    background-color: #e61610; 
+    font-size: 3em; 
+    border-style: solid; 
+    border-width: 0px 2px 0px 2px; 
+    border-color: black;
+}
 
 div.white-box-2 {
     background-color: white;
@@ -133,4 +141,73 @@ td > a.contractor {
 a.contractor:hover {
     background-color: #757575;
     color: white;
+}
+
+/* .row-margin-05 { margin-top: 0.5em; }
+
+
+table.contractorCarRecord {
+    border-collapse: separate;
+    border-spacing: 1em 2em;
+    font-size: 2em;
+}
+
+table.contractorCarRecord td, table.contractorCarRecord th{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+table.contractorCarRecord tr {
+    outline: auto;
+} */
+/* 
+table.contractorCarRecord tr th {
+    background-color: #c0c0c0;
+} */
+
+/* table tr td, table tr th { padding: 0; } */
+
+
+table.contractorCarRecord {
+    border-collapse: collapse;
+}
+table.contractorCarRecord th {
+    background-color:#c0c0c0;
+    Color:black;
+}
+table.contractorCarRecord th, table.contractorCarRecord td, table.carRecordData th, table.carRecordData td {
+    width:100em;
+    height:100px;
+    text-align:center;
+    padding:5px
+}
+table.contractorCarRecord tr, table.carRecordData tr{
+    outline: auto
+}
+.borderStyleCarRecord {
+    border-right:hidden;
+}
+.carRecordData {
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+table.contractorCarRecord, table,.carRecordData {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+
+form.left-form {
+    width: fit-content;
+    margin: 0;
+    margin-left: 5em;
+    display: inline-table;
+}
+
+form.right-form {
+    width: fit-content;
+    margin: 0;
+    float: right;
+    margin-right: 5em;
+    display: inline-table;
 }

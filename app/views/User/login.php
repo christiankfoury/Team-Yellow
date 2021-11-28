@@ -24,11 +24,11 @@
             <div style="width: fit-content; text-align: left">
                 <form action='' method='post'>
                     <label class="login" for="username">Username:</label><br>
-                    <input type='text' name='username' placeholder="Username"/><br><br><br>
+                    <input type='text' class="login" name='username' placeholder=" Username" /><br><br><br>
                     <label class="login" for="password">Password:</label><br>
-                    <input type='password' name='password' placeholder="Password"/><br><br>
+                    <input type='password' class="login" name='password' placeholder=" Password" /><br><br>
                     <div style="text-align: center;">
-                        <input type='submit' name='action' value='Login' />
+                        <input type='submit' class="login-button" name='action' value='Login' />
                     </div>
                 </form>
             </div>
