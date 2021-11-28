@@ -15,30 +15,29 @@
     <a href="/User/detailingCustomer">Detailing Customers</a><br>
     <a href="/User/accountManagement">Account Management</a><br>
     <a href="/User/logout">Logout</a><br> -->
-    <div class="white-box-2">
-        <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-                <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/index">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/Contractor/index">Contractors</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/detailingCustomer">Detailing Customers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/accountManagement">Account Management</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/logout">Logout</a>
-            </li>
-        </ul>
-        <center>
-            <h1 class="login-title" style="color: black;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
-        </center>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/Contractor/index">Contractors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/detailingCustomer">Detailing Customers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/accountManagement">Account Management</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/logout">Logout</a>
+        </li>
+    </ul>
+    <center>
+        <h1 class="login-title" style="color: black;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
+    </center>
 
-        <!-- <h1></h1> -->
-    </div>
+    <!-- <h1></h1> -->
+
 
 
 

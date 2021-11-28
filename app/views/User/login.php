@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="\app\css\styles.css" />
 </head>
 
-<body>
+<body id="login">
     <?php
     if ($data != null) {
         echo $data;

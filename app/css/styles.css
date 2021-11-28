@@ -1,6 +1,8 @@
 body {
-    background-color: #929292;
     font-family: 'Quicksand', sans-serif;
+}
+#login {
+    background-color: #929292;
 }
 
 div.center {
@@ -86,6 +88,7 @@ div.white-box-2 {
 .grey-button {
     margin-left: 2em;
     margin-top: 2em;
+    margin-bottom: 2em;
     background: #ebebeb;
     padding: 1em;
     padding-left: 2em;
