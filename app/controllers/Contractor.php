@@ -7,6 +7,7 @@ class Contractor extends \app\core\Controller {
     public function index() {
         $contractor = new \app\models\Contractor();
         $contractors = $contractor->getAllContractors();
+        // print_r($contractors);
         $this->view('Contractor/index', ['contractors'=>$contractors]);
     }
 
@@ -24,6 +25,21 @@ class Contractor extends \app\core\Controller {
             }
 
         } else // present view of addContractor
-            $this->view('Main/addContractor');
+            $this->view('Contractor/addContractor');
+    }
+
+    public function areYouSureDelete($contractor_id, $company_name) {
+        $contractor = new \app\models\Contractor();
+        $contractor->contractor_id = $contractor_id;
+        $contractor->company_name = $company_name;
+        if (isset($_POST['yes'])) {
+            $contractor->delete();
+            header("Location:/Contractor/index");
+        } else if (isset($_POST['no'])) {
+            header("Location:/Contractor/index");
+        } else {
+            $this->view('Contractor/areYouSureDelete', ['contractor' => $contractor]);
+        }        
+        // $contractor->delete();
     }
 }

@@ -38,6 +38,24 @@ class Contractor extends \app\core\Model {
         return $STMT->fetch(); //return the record
     }
 
+    public function delete() {
+        $SQL = 'DELETE FROM contractor_car_record where contractor_id = :contractor_id';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['contractor_id' => $this->contractor_id]);
+
+        $SQL = 'DELETE FROM  contractor where contractor_id = :contractor_id';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['contractor_id' => $this->contractor_id]);
+    }
+
+    public function getContractorById($contractor_id) {
+        $SQL = 'SELECT * FROM contractor where contractor_id = :contractor_id';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['contractor_id' => $contractor_id]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Contractor');
+        return $STMT->fetch(); //return the record
+    }
+
     public function insert()
     {
         $SQL = 'INSERT INTO contractor(company_name) VALUES (:company_name)';

@@ -1,0 +1,56 @@
+body {
+    background-color: #929292;
+    font-family: 'Quicksand', sans-serif;
+}
+
+div.center {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.white-box {
+    background-color: white;
+    width: 70rem;
+    height: 70rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.center-x-y {
+    top: 20%;
+    margin-top: 35%;
+    transform: translateY(-50%);
+}
+
+h1.login-title {
+    margin-top: 10%;
+    font-size: 5em;
+    color: #e61610;
+}
+
+input[type="text"], input[type="password"] {
+    width: 25em;
+    font-size: 1.75em;
+    padding: 0.25em;
+}
+
+label.login {
+    font-size: 2.5em;
+    color: #e61610;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+
+input[type="submit"] {
+    width: 50%;
+    margin-top: 2em;
+    background: #e61610;
+    color: white;
+    font-size: 2em;
+    /* padding: 0.5em; */
+    border-radius: 0.25em;
+}

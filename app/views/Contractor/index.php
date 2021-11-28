@@ -12,14 +12,15 @@
     <a href="/User/accountManagement">Account Management</a><br>
     <a href="/User/logout">Logout</a><br><br><br>
 
-    <a href="/Contractor/addContractor">New Contractor? Click to add a contractor</a><br>
+    <a href="/Contractor/addContractor">New Contractor? Click to add a contractor</a><br><br>
 
     <?php
-    // if ($data != null) {
-    //     foreach ($data as $contractor) {
-    //         echo "<a href='/ContractorCarRecord/index</a><br>";
-    //     }
-    // }
+    if ($data['contractors'] != null) {
+        foreach ($data['contractors'] as $contractor) {
+            echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
+            echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
+        }
+    }
     ?>
     <!-- <a href="/ContractorCarRecord/index/">Logout</a><br> -->
 </body>
