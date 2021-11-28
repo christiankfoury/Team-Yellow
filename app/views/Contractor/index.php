@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="\app\css\styles.css" />
 </head>
 
-<body>
+<body style="margin: 0; padding: 0;">
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
             <a class="nav-link active" style="background-color: #e61610; font-size: 3em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;" href="/User/index">Home</a>
@@ -47,37 +47,58 @@
         <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a>
         <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a> -->
 
-    <table style="width: fit-content; display: table-cell;">
-        <tr>
-            <th style="font-size: 100px;"><a href='/ContractorCarRecord/index/2' style="border: 1px solid black;">Honda</a></th>
-        </tr>
-        <tr>
-            <td style="font-size: 40px; text-align: right"><a href='/Contractor/areYouSureDelete/' style="border: 1px solid black;">Delete</a></td>
-        </tr>
-    </table>
-    <table style="width: fit-content; display: table-cell;">
-        <tr>
-            <th style="font-size: 100px;"><a href='/ContractorCarRecord/index/2' style="border: 1px solid black;">Honda</a></th>
-        </tr>
-        <tr>
-            <td style="font-size: 40px; text-align: right"><a href='/Contractor/areYouSureDelete/' style="border: 1px solid black;">Delete</a></td>
-        </tr>
-    </table>
+    <!-- <center>
+        <div style="flex-wrap: wrap;">
+            <div style="flex: 1; display: inline-block;">
+                <table style="width: fit-content;">
+                    <tr>
+                        <th class="contractor"><a href='/ContractorCarRecord/index/2' class="contractor">Honda</a></th>
+                    </tr>
+                    <tr>
+                        <td class="contractor"><a href='/Contractor/areYouSureDelete/' class="contractor">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="flex: 1; display: inline-block;">
+                <table style="width: fit-content;">
+                    <tr>
+                        <th class="contractor"><a href='/ContractorCarRecord/index/2' class="contractor">Honda</a></th>
+                    </tr>
+                    <tr>
+                        <td class="contractor"><a href='/Contractor/areYouSureDelete/' class="contractor">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center> -->
+
     <!-- PUT PADDING ON TD, TH, A -->
 
     <!-- display table cell -->
 
 
-
-    <?php
-    // if ($data['contractors'] != null) {
-    //     foreach ($data['contractors'] as $contractor) {
-    //         echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
-    //         echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
-    //     }
-    // }
-    ?>
-    <!-- <a href=" /ContractorCarRecord/index/">Logout</a><br> -->
+    <center>
+        <div style="flex-wrap: wrap;">
+            <?php
+            if ($data['contractors'] != null) {
+                foreach ($data['contractors'] as $contractor) {
+                    echo "<div style=\"flex: 1; display: inline-block;\">";
+                    echo "<table style=\"width: fit-content;\">
+                    <tr>
+                        <th class=\"contractor\"><a href='/ContractorCarRecord/index/{$contractor->contractor_id}' class=\"contractor\">{$contractor->company_name}</a></th>
+                    </tr>
+                    <tr>
+                        <td class=\"contractor\"><a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}' class=\"contractor\">Delete</a></td>
+                    </tr>
+                </table></div>";
+                    // echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
+                    // echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
+                }
+            }
+            ?>
+            <!-- <a href=" /ContractorCarRecord/index/">Logout</a><br> -->
+        </div>
+    </center>
 </body>
 
 </html>
