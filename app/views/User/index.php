@@ -33,7 +33,7 @@
         </li>
     </ul>
     <center>
-        <h1 class="login-title" style="color: black;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
+        <h1 class="login-title" style="color: black; margin-top: 10%;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
     </center>
 
     <!-- <h1></h1> -->

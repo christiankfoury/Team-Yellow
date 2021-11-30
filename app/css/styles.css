@@ -14,34 +14,36 @@ div.center {
 
 div.white-box {
     background-color: white;
-    width: 70rem;
-    height: 70rem;
+    /* width: 70rem;
+    height: 70rem; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);  
+    /* new */
+    padding: 5% 2% 5% 2%;
 }
 
 .center-x-y {
     top: 20%;
-    margin-top: 35%;
-    transform: translateY(-50%);
+    /* margin-top: 35%;
+    transform: translateY(-50%); */
 }
 
 h1.login-title {
-    margin-top: 10%;
-    font-size: 5em;
+    margin-bottom: 10%;
+    font-size: 5vh;
     color: #e61610;
 }
 
 input[type="text"].login, input[type="password"].login {
-    width: 25em;
-    font-size: 1.75em;
+    width: 25vw;
+    font-size: 1.75vh;
     padding: 0.25em;
 }
 
 label.login {
-    font-size: 2.5em;
+    font-size: 2.5vh;
     color: #e61610;
     font-weight: 300;
     margin-bottom: 0.5em;
@@ -49,10 +51,10 @@ label.login {
 
 input[type="submit"].login-button {
     width: 50%;
-    margin-top: 2em;
+    margin-top: 2vh;
     background: #e61610;
     color: white;
-    font-size: 2em;
+    font-size: 2vh;
     /* padding: 0.5em; */
     border-radius: 0.25em;
 }
@@ -113,7 +115,7 @@ div.white-box-2 {
 
 th.contractor{
     font-size: 100px;
-    padding: 200px;
+    padding: 200px 200px 200px 0px;
 }
 
 th > a.contractor{
@@ -275,3 +277,4 @@ form.right-form {
 .nav-link.active {
     background-color: #e61610; font-size: 2em; padding-top: 1em; padding-bottom: 1em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;
 }
+ul.nav a:hover { background-color: #7e0e0a !important; }
