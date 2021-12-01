@@ -35,7 +35,7 @@
     <!-- <h1></h1> -->
 
     <a class="left-form add-car-record" href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a><br><br>
-    
+
     <?php
     if (isset($data['error'])) {
         echo "<h3>{$data['error']}</h3>";
@@ -43,16 +43,19 @@
     ?>
 
     <form action='' method='post' class="left-form">
-        <label for="" style="color: white; margin-right: 5px">Search by courtesy number:</label> <input type='text' name='courtesy_number' placeholder="Courtesy Number" />
-        <input type='submit' name='action' value='Search' />
+        <label for="" style="color: white; margin-right: 5px;">
+            Search by courtesy number:
+        </label>
+        <input class="no-border" type='text' name='courtesy_number' style='border-top-right-radius: 0px; border-bottom-right-radius: 0px;' placeholder="Courtesy Number" />
+        <input class="no-border" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action' value='Search' />
     </form>
 
     <form action='' method='post' class="right-form">
         <label for="" style="color: white; margin-right: 5px">Filter from </label>
-        <input type='text' name='starting_date' placeholder="Select a date" onfocus="(this.type='date')" />
+        <input class="no-border" type='text' name='starting_date' placeholder="Select a date" onfocus="(this.type='date')" />
         <label for="" style="color: white; margin-left: 5px; margin-right: 5px"> to </label>
-        <input type='text' name='ending_date' placeholder="Select a date" onfocus="(this.type='date')" />
-        <input type='submit' name='action2' value='Filter' />
+        <input class="no-border" type='text' name='ending_date' style='border-top-right-radius: 0px; border-bottom-right-radius: 0px;' placeholder="Select a date" onfocus="(this.type='date')" />
+        <input class="no-border" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action2' value='Filter' />
     </form>
 
 

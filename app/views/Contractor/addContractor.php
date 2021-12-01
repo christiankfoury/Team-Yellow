@@ -34,7 +34,7 @@
 
     <center>
         <div class="container-form">
-            <h1 style="transform: translateY(2em); font-size:3.5em">New Contractor</h1>
+            <h1 class="form-title">New Contractor</h1>
             <div class="center-vertically">
                 <form action='' method='post'>
                     <label for="company_name" class="form-label">Company name:</label><br>

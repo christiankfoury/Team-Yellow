@@ -29,7 +29,7 @@
     </ul>
     <center style="margin-top: 2em;">
         <div class="title">
-            <h2>Contractors</h2>
+            <h2 class="title-text">Contractors</h2>
         </div>
     </center>
     <a href="/Contractor/addContractor" class="grey-button">New Contractor? Click to add a contractor</a><br><br>
@@ -83,7 +83,7 @@
             if ($data['contractors'] != null) {
                 foreach ($data['contractors'] as $contractor) {
                     echo "<div style=\"flex: 1; display: inline-block;\">";
-                    echo "<table style=\"width: fit-content;\">
+                    echo "<table style=\"width: fit-content; margin: 0\">
                     <tr>
                         <th class=\"contractor\"><a href='/ContractorCarRecord/index/{$contractor->contractor_id}' class=\"contractor\">{$contractor->company_name}</a></th>
                     </tr>
