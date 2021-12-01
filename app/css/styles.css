@@ -355,3 +355,17 @@ input.no-border {
     color: white;
     text-decoration: none;
 }
+
+.are-you-sure {
+    margin: 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 2vh;
+    color: white;
+    font-weight: 900;
+    padding: 1vh;
+}
+
+.warning {
+    width: 200px;
+}
