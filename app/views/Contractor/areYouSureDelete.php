@@ -35,7 +35,7 @@
     <center>
         <h2>
             <img src="/app/uploads/warning.png" alt="" class="warning">
-            Are you sure you want to delete <?php $data['contractor']->company_name; ?> as a contractor and delete its records?<br>
+            Are you sure you want to delete <?php echo $data['contractor']->company_name; ?> as a contractor and delete its records?<br>
             Note that clicking yes is a irreversible action
         </h2>
         <form action='' method='post'>

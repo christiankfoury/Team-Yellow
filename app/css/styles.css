@@ -369,3 +369,11 @@ input.no-border {
 .warning {
     width: 200px;
 }
+
+input[name='yes']:hover {
+    background: green !important;
+}
+
+input[name='no']:hover {
+    background: #7e0e0a !important;
+}
