@@ -171,13 +171,14 @@ table.contractorCarRecord tr th {
 
 table.contractorCarRecord {
     border-collapse: collapse;
+    margin-top: 10px;
 }
 table.contractorCarRecord th {
     background-color:#c0c0c0;
     Color:black;
 }
 table.contractorCarRecord th, table.contractorCarRecord td, table.carRecordData th, table.carRecordData td {
-    width:100em;
+    /* width:100em; */
     height:100px;
     text-align:center;
     padding:5px
@@ -194,16 +195,21 @@ table.contractorCarRecord tr, table.carRecordData tr{
 }
 
 table.contractorCarRecord, table,.carRecordData {
+    max-width: -webkit-fill-available;
     margin-left: 5em;
     margin-right: 5em;
 }
 
 
-form.left-form {
+.left-form {
     width: fit-content;
     margin: 0;
     margin-left: 5em;
     display: inline-table;
+    background: #72bb53;
+    padding: 5px;
+    font-size: 1.5em;
+    border-radius: 5px;
 }
 
 form.right-form {
@@ -212,6 +218,26 @@ form.right-form {
     float: right;
     margin-right: 5em;
     display: inline-table;
+    background: #72bb53;
+    padding: 5px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    /* margin-right: 3.3em; */
+}
+
+.add-car-record {
+    color: white;
+    text-decoration: none;
+}
+.add-car-record:hover {
+    background-color:green;
+    color: white;
+}
+
+table {
+    font-size: 1.5em;
+    table-layout: fixed;
+    width: 100%;
 }
 
 .container-form {
@@ -278,3 +304,34 @@ form.right-form {
     background-color: #e61610; font-size: 2em; padding-top: 1em; padding-bottom: 1em; border-style: solid; border-width: 0px 2px 0px 2px; border-color: black;
 }
 ul.nav a:hover { background-color: #7e0e0a !important; }
+
+.edit-button {
+        /* width: fit-content; */
+    /* height: fit-content; */
+    padding: 16px 32px 16px 32px;
+    background: #3d8af7;
+    transform: translateX(16px);
+    /* position: absolute; */
+    margin-right: -32px;
+    margin-left: -32px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.delete-button {
+    background: #e61610;
+}
+
+.edit-button:hover {
+    background: #224b85;
+    color: white;
+    text-decoration: none;
+}
+
+.delete-button:hover {
+    background-color: #7e0e0a;
+    color: white;
+    text-decoration: none;
+}

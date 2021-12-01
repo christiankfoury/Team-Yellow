@@ -28,30 +28,14 @@
         </li>
     </ul>
     <div style="margin-top: 2em; margin-left: 2em;">
-        <div class="title">
+        <div class="title" style="margin-bottom: 50px;">
             <h2>Records for <?php echo $data['contractor']->company_name ?></h2>
         </div>
     </div>
     <!-- <h1></h1> -->
 
-    <a href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a><br><br>
-    <!-- <div class="container">
-        <div class="row row-margin-05" style='background:yellow;'>
-            <h1>Row 1</h1>
-        </div>
-        <div class="row row-margin-05" style='background:skyblue;'>
-            <h1>Row 2</h1>
-        </div>
-        <div class="row row-margin-05" style='background:gray;'>
-            <h1>Row 3</h1>
-        </div>
-        <div class="row row-margin-05" style='background:skyblue;'>
-            <h1>Row 4</h1>
-        </div>
-    </div> -->
-
-
-
+    <a class="left-form add-car-record" href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a><br><br>
+    
     <?php
     if (isset($data['error'])) {
         echo "<h3>{$data['error']}</h3>";
@@ -59,21 +43,21 @@
     ?>
 
     <form action='' method='post' class="left-form">
-        Search by courtesy number: <input type='text' name='courtesy_number' placeholder="Courtesy Number" />
+        <label for="" style="color: white; margin-right: 5px">Search by courtesy number:</label> <input type='text' name='courtesy_number' placeholder="Courtesy Number" />
         <input type='submit' name='action' value='Search' />
     </form>
 
     <form action='' method='post' class="right-form">
-        Filter from
+        <label for="" style="color: white; margin-right: 5px">Filter from </label>
         <input type='text' name='starting_date' placeholder="Select a date" onfocus="(this.type='date')" />
-        to
+        <label for="" style="color: white; margin-left: 5px; margin-right: 5px"> to </label>
         <input type='text' name='ending_date' placeholder="Select a date" onfocus="(this.type='date')" />
         <input type='submit' name='action2' value='Filter' />
     </form>
 
 
     <center>
-        <table class="contractorCarRecord">;
+        <table class="contractorCarRecord">
             <tr>
                 <th>Courtesy Number</th>
                 <th>Car Specification</th>
@@ -92,8 +76,8 @@
                 echo "<td>" . $record->car_specification . "</td>";
                 echo "<td>" . $record->job_type . "</td>";
                 echo "<td>" . $record->date . "</td>";
-                echo "<td><a href='/ContractorCarRecord/editRecord/" . $record->contractor_car_record_id . "'>Edit</a></td>";
-                echo "<td><a href='/ContractorCarRecord/deleteRecord/{$data['contractor']->contractor_id}/" . $record->contractor_car_record_id . "'>Delete</a></td>";
+                echo "<td><a class='edit-button' href='/ContractorCarRecord/editRecord/" . $record->contractor_car_record_id . "'>Edit</a></td>";
+                echo "<td><a class='edit-button delete-button' href='/ContractorCarRecord/deleteRecord/{$data['contractor']->contractor_id}/" . $record->contractor_car_record_id . "'>Delete</a></td>";
                 // echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
                 // echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
                 echo "</tr>";
