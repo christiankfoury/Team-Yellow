@@ -29,6 +29,7 @@ class User extends \app\core\Controller
             $this->view('User/login');
     }
 
+    #[\app\filters\Login]
     public function index()
     {
         $this->view('User/index');
@@ -38,14 +39,16 @@ class User extends \app\core\Controller
     {
         //destroy session variables
         session_destroy();
-        header('location:/Profile/login');
+        header('location:/User/login');
     }
 
+    #[\app\filters\Login]
     public function accountManagement()
     {
         $this->view('User/accountManagement');
     }
 
+    #[\app\filters\Login]
     public function changePassword()
     {
         $user = new \app\models\User();

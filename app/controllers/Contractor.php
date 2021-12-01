@@ -3,7 +3,8 @@
 namespace app\controllers;
 
 class Contractor extends \app\core\Controller {
-	
+    
+    #[\app\filters\Login]
     public function index() {
         $contractor = new \app\models\Contractor();
         $contractors = $contractor->getAllContractors();
@@ -11,6 +12,7 @@ class Contractor extends \app\core\Controller {
         $this->view('Contractor/index', ['contractors'=>$contractors]);
     }
 
+    #[\app\filters\Login]
     public function addContractor() {
         if (isset($_POST['action'])) { // if post was submitted
             $contractor = new \app\models\Contractor();
@@ -28,6 +30,7 @@ class Contractor extends \app\core\Controller {
             $this->view('Contractor/addContractor');
     }
 
+    #[\app\filters\Login]
     public function areYouSureDelete($contractor_id, $company_name) {
         $contractor = new \app\models\Contractor();
         $contractor->contractor_id = $contractor_id;

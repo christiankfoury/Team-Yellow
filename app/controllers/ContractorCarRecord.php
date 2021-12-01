@@ -4,6 +4,7 @@ namespace app\controllers;
 
 class ContractorCarRecord extends \app\core\Controller
 {
+    #[\app\filters\Login]
     public function index($contractor_id)
     {
         $contractorCarRecord = new \app\models\ContractorCarRecord();
@@ -50,6 +51,7 @@ class ContractorCarRecord extends \app\core\Controller
         }
     }
 
+    #[\app\filters\Login]
     public function addRecord($contractor_id) {
         if (isset($_POST['action'])) {
             $contractorCarRecord = new \app\models\ContractorCarRecord();
@@ -70,6 +72,7 @@ class ContractorCarRecord extends \app\core\Controller
         }
     }
 
+    #[\app\filters\Login]
     public function editRecord($contractor_car_record_id)
     {
         $contractorCarRecord = new \app\models\ContractorCarRecord();
@@ -92,6 +95,7 @@ class ContractorCarRecord extends \app\core\Controller
         }
     }
 
+    #[\app\filters\Login]
     public function deleteRecord($contractor_id, $contractor_car_record_id) {
         $contractorCarRecord = new \app\models\ContractorCarRecord();
         $contractorCarRecord->deleteRecord($contractor_car_record_id);
