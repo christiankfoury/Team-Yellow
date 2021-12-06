@@ -12,19 +12,19 @@
 <body>
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/index">Home</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/Contractor/index">Contractors</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/Contractor/index">Contractors</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/detailingCustomer">Detailing Customers</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/detailingCustomer" onclick="return false">Detailing Customers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/accountManagement">Account Management</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/accountManagement">Account Management</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/logout">Logout</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/logout">Logout</a>
         </li>
     </ul>
     <div style="margin-top: 2em; margin-left: 2em;">
@@ -34,13 +34,14 @@
     </div>
     <!-- <h1></h1> -->
 
-    <a class="left-form add-car-record" href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a><br><br>
-
     <?php
     if (isset($data['error'])) {
-        echo "<h3>{$data['error']}</h3>";
+        echo '<div class="alert alert-danger">' . $data['error'] . '</div>';
     }
     ?>
+
+    <a class="left-form add-car-record" href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a><br><br>
+
 
     <form action='' method='post' class="left-form">
         <label for="" style="color: white; margin-right: 5px;">

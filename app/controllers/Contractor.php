@@ -15,6 +15,15 @@ class Contractor extends \app\core\Controller {
     #[\app\filters\Login]
     public function addContractor() {
         if (isset($_POST['action'])) { // if post was submitted
+            if (trim($_POST['company_name']) == '') {
+                $this->view('Contractor/addContractor', ['error'=>'Company name is required']);
+                return;
+            }
+            if (strlen($_POST['company_name']) > 30) {
+                $this->view('Contractor/addContractor', ['error'=>'Company name is too long']);
+                return;
+            }
+            
             $contractor = new \app\models\Contractor();
             //  Post data
             $contractor->company_name = $_POST['company_name'];

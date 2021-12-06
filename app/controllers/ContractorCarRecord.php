@@ -53,7 +53,27 @@ class ContractorCarRecord extends \app\core\Controller
 
     #[\app\filters\Login]
     public function addRecord($contractor_id) {
+        $contractor = new \app\models\Contractor();
+        $contractor = $contractor->getContractorById($contractor_id);
         if (isset($_POST['action'])) {
+            if (trim($_POST['courtesy_number']) == '' || trim($_POST['car_specification']) == '' || trim($_POST['job_type']) == '' || trim($_POST['date']) == '') {
+                $this-> view("ContractorCarRecord/addRecord", ['error' => 'Please fill in all fields', 'contractor' => $contractor]);
+                return;
+            }
+
+            if (strlen($_POST['courtesy_number']) > 30) {
+                $this-> view("ContractorCarRecord/addRecord", ['error' => 'Courtesy number cannot be more than 30 characters', 'contractor' => $contractor]);
+                return;
+            }
+            if (strlen($_POST['car_specification']) > 30) {
+                $this-> view("ContractorCarRecord/addRecord", ['error' => 'Car specification cannot be more than 30 characters', 'contractor' => $contractor]);
+                return;
+            }
+            if (strlen($_POST['job_type']) > 30) {
+                $this-> view("ContractorCarRecord/addRecord", ['error' => 'Job type cannot be more than 30 characters', 'contractor' => $contractor]);
+                return;
+            }
+
             $contractorCarRecord = new \app\models\ContractorCarRecord();
             $contractorCarRecord->contractor_id = $contractor_id;
             $contractorCarRecord->courtesy_number = $_POST['courtesy_number'];
@@ -65,9 +85,6 @@ class ContractorCarRecord extends \app\core\Controller
             header("Location:/ContractorCarRecord/index/$contractor_id");
 
         } else {
-            $contractor = new \app\models\Contractor();
-            $contractor = $contractor->getContractorById($contractor_id);
-
             $this->view('ContractorCarRecord/addRecord', ['contractor' => $contractor]);
         }
     }
@@ -80,6 +97,24 @@ class ContractorCarRecord extends \app\core\Controller
         $contractorId = $contractorCarRecord->contractor_id;
 
         if (isset($_POST['action'])) {
+            if (trim($_POST['courtesy_number']) == '' || trim($_POST['car_specification']) == '' || trim($_POST['job_type']) == '' || trim($_POST['date']) == '') {
+                $this->view("ContractorCarRecord/editRecord", ['error' => 'Please fill in all fields', 'contractorCarRecord' => $contractorCarRecord]);
+                return;
+            }
+
+            if (strlen($_POST['courtesy_number']) > 30) {
+                $this->view("ContractorCarRecord/editRecord", ['error' => 'Courtesy number cannot be more than 30 characters', 'contractorCarRecord' => $contractorCarRecord]);
+                return;
+            }
+            if (strlen($_POST['car_specification']) > 30) {
+                $this->view("ContractorCarRecord/editRecord", ['error' => 'Car specification cannot be more than 30 characters', 'contractorCarRecord' => $contractorCarRecord]);
+                return;
+            }
+            if (strlen($_POST['job_type']) > 30) {
+                $this->view("ContractorCarRecord/editRecord", ['error' => 'Job type cannot be more than 30 characters', 'contractorCarRecord' => $contractorCarRecord]);
+                return;
+            }
+
             $contractorCarRecord = new \app\models\ContractorCarRecord();
             $contractorCarRecord->contractor_car_record_id = $contractor_car_record_id;
             $contractorCarRecord->courtesy_number = $_POST['courtesy_number'];

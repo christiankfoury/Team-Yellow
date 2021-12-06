@@ -12,7 +12,7 @@
 <body id="login">
     <?php
     if ($data != null) {
-        echo $data;
+        echo '<div class="alert alert-danger" role="alert">' . $data . '</div>';
     }
     ?>
 

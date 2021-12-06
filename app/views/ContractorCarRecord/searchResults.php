@@ -8,7 +8,7 @@
     <h1>Results for <?php echo $data['contractor']->company_name ?></h1>
     <a href="/User/index">Home</a><br>
     <a href="/Contractor/index">Contractors</a><br>
-    <a href="/User/detailingCustomer">Detailing Customers</a><br>
+    <a href="/User/detailingCustomer" onclick="return false">Detailing Customers</a><br>
     <a href="/User/accountManagement">Account Management</a><br>
     <a href="/User/logout">Logout</a><br><br><br>
 

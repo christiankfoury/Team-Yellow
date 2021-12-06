@@ -13,19 +13,19 @@
 <body style="margin: 0; padding: 0;">
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/index">Home</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/Contractor/index">Contractors</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/Contractor/index">Contractors</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/detailingCustomer">Detailing Customers</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/detailingCustomer" onclick="return false">Detailing Customers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/accountManagement">Account Management</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/accountManagement">Account Management</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/logout">Logout</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/logout">Logout</a>
         </li>
     </ul>
 
@@ -46,8 +46,8 @@
 
     <div style="margin-left: 3vw; margin-top: 3vh; display: inline-grid;">
         <a class="account-management-button" href="/User/changePassword">Change password</a><br>
-        <a class="account-management-button" href="/User/createtwofa">Set up 2-factor authentication</a><br>
-        <a class="account-management-button" href="/User/addEmployee">Add Employee</a><br>
+        <a class="account-management-button" href="/User/createtwofa" onclick="return false">Set up 2-factor authentication</a><br>
+        <a class="account-management-button" href="/User/addEmployee" onclick="return false">Add Employee</a><br>
         <a class="account-management-button" href="/User/logout">Logout</a><br>
     </div>
 

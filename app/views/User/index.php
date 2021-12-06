@@ -12,24 +12,24 @@
 <body>
     <!-- <a href="/User/index">Home</a><br>
     <a href="/Contractor/index">Contractors</a><br>
-    <a href="/User/detailingCustomer">Detailing Customers</a><br>
+    <a href="/User/detailingCustomer" onclick="return false">Detailing Customers</a><br>
     <a href="/User/accountManagement">Account Management</a><br>
     <a href="/User/logout">Logout</a><br> -->
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/index">Home</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/Contractor/index">Contractors</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/Contractor/index">Contractors</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/detailingCustomer">Detailing Customers</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/detailingCustomer" onclick="return false">Detailing Customers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/accountManagement">Account Management</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/accountManagement">Account Management</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/logout">Logout</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/logout">Logout</a>
         </li>
     </ul>
     <center>
@@ -37,10 +37,48 @@
     </center>
 
     <!-- <h1></h1> -->
-
-
+    <!-- <button onclick="('/User/printAll')"></button> -->
 
 
 </body>
+
+<script>
+    function closePrint() {
+        document.body.removeChild(this.container);
+    }
+
+    function setPrint() {
+        this.contentWindow.container = this;
+        this.contentWindow.onbeforeunload = closePrint;
+        this.contentWindow.onafterprint = closePrint;
+        this.contentWindow.focus(); // Required for IE
+        this.contentWindow.print();
+    }
+
+    function printPage(sURL) {
+        var oHideFrame = document.createElement("iframe");
+        oHideFrame.onload = setPrint;
+        oHideFrame.style.position = "fixed";
+        oHideFrame.style.right = "0";
+        oHideFrame.style.bottom = "0";
+        oHideFrame.style.width = "0";
+        oHideFrame.style.height = "0";
+        oHideFrame.style.border = "0";
+        oHideFrame.src = sURL;
+        document.body.appendChild(oHideFrame);
+        // oHideFrame.contentWindow.document.execCommand('print', false, null);
+    }
+
+    function printDiv() {
+        var divContents = document.getElementById("printContents").innerHTML;
+        var a = window.open('', '');
+        a.document.write('<html>');
+        a.document.write('<body> <center>');
+        a.document.write(divContents);
+        a.document.write('</center></body></html>');
+        a.document.close();
+        a.print();
+    }
+</script>
 
 </html>

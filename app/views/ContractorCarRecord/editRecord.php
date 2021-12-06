@@ -12,19 +12,19 @@
 <body style="margin: 0; padding: 0;">
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/index">Home</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/Contractor/index">Contractors</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/Contractor/index">Contractors</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/detailingCustomer">Detailing Customers</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/detailingCustomer" onclick="return false">Detailing Customers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/accountManagement">Account Management</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/accountManagement">Account Management</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" style="background-color: #e61610;" href="/User/logout">Logout</a>
+            <a class="nav-link active" style="background-color: #b70f0a;" href="/User/logout">Logout</a>
         </li>
     </ul>
 
@@ -36,15 +36,14 @@
         </div>
     </center>
 
-    <?php
-    if (isset($data['error'])) {
-        echo $data['error'];
-    }
-    ?>
-
     <center>
         <div class="container-form" style="margin-top: 3vh">
             <div class="center-vertically">
+                <?php
+                if (isset($data['error'])) {
+                    echo '<div class="alert alert-danger">' . $data['error'] . '</div>';
+                }
+                ?>
                 <form action='' method='post'>
                     <label for="courtesy_number" class="form-label">Courtesy Number:</label><br>
                     <input type='text' name='courtesy_number' class='form-input' value="<?php echo $data['contractorCarRecord']->courtesy_number ?>" /><br>
