@@ -37,12 +37,12 @@
     </center>
 
     <!-- <h1></h1> -->
-    <!-- <button onclick="('/User/printAll')"></button> -->
+    <!-- <button onclick="printPage('/ContractorCarRecord/index/2')"></button> -->
 
 
 </body>
 
-<script>
+<!-- <script>
     function closePrint() {
         document.body.removeChild(this.container);
     }
@@ -70,7 +70,7 @@
     }
 
     function printDiv() {
-        var divContents = document.getElementById("printContents").innerHTML;
+        var divContents = document.getElementById("carRecordData").innerHTML;
         var a = window.open('', '');
         a.document.write('<html>');
         a.document.write('<body> <center>');
@@ -79,6 +79,6 @@
         a.document.close();
         a.print();
     }
-</script>
+</script> -->
 
 </html>

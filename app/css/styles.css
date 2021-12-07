@@ -180,6 +180,7 @@ table.contractorCarRecord tr th {
 table.contractorCarRecord {
     border-collapse: collapse;
     margin-top: 10px;
+    display: inline-table;
 }
 table.contractorCarRecord th {
     background-color:#c0c0c0;
@@ -189,7 +190,8 @@ table.contractorCarRecord th, table.contractorCarRecord td, table.carRecordData 
     /* width:100em; */
     height:100px;
     text-align:center;
-    padding:5px
+    padding:5px;
+    word-break: break-all;
 }
 table.contractorCarRecord tr, table.carRecordData tr{
     outline: auto
@@ -231,6 +233,18 @@ form.right-form {
     font-size: 1.5em;
     border-radius: 5px;
     /* margin-right: 3.3em; */
+}
+
+.right-print-button {
+    width: fit-content;
+    margin: 0;
+    margin-right: 5em;
+    float: right;
+    display: inline-table;
+    background: #72bb53;
+    padding: 5px;
+    font-size: 1.5em;
+    border-radius: 5px;
 }
 
 .add-car-record {
