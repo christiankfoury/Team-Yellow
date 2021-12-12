@@ -36,7 +36,7 @@
         <h1 class="login-title" style="color: black; margin-top: 10%;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
     </center>
     <center>
-        <a href="/User/summaryReport" style="border: none" class="add-car-record user-index-print">Summary Report</a><br><br>
+        <a href="/User/summaryReport" style="border: none;" class="add-car-record user-index-print">Click here for summary report</a><br><br>
     </center>
 
     <!-- <h1></h1> -->

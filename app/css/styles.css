@@ -120,6 +120,7 @@ div.white-box-2 {
     border-radius: 5px;
     color: black !important;
     font-weight: 500;
+    background: #ebebeb;
 }
 .user-index-print:hover {
     color: white !important;
