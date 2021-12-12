@@ -30,7 +30,7 @@
     </ul>
 
     <a href="/ContractorCarRecord/index/<?php echo $data['contractor']->contractor_id ?>" class="grey-button">Go back</a><br><br>
-    <button style="border: none" class="right-print-button add-car-record" onclick="printDiv()">Print</button><br><br>
+    <button style="border: none" class="right-print-button add-car-record" onclick="printTable()">Print</button><br><br>
 
     <center>
         <table class="contractorCarRecord">
@@ -63,7 +63,7 @@
     </center>
 
     <script>
-        function printDiv() {
+        function printTable() {
             var tableData = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
             var tableHeader = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
             tableData.style.marginLeft = 0;

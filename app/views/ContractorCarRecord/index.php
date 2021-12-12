@@ -41,7 +41,7 @@
     ?>
 
     <a class="left-form add-car-record" href="/ContractorCarRecord/addRecord/<?php echo $data['contractor']->contractor_id ?>}">Add new record for <?php echo $data['contractor']->company_name; ?></a>
-    <button style="border: none" class="right-print-button add-car-record" onclick="printDiv()">Print</button><br><br>
+    <button style="border: none" class="right-print-button add-car-record" onclick="printTable()">Print</button><br><br>
 
 
     <form action='' method='post' class="left-form">
@@ -92,7 +92,7 @@
 
     <script>
 
-        function printDiv() {
+        function printTable() {
             var tableData = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
             var tableHeader = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
             tableData.style.marginLeft = 0;
