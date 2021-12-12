@@ -72,46 +72,26 @@ class User extends \app\core\Controller
         }
     }
 
-    // #[\app\filters\Login]
-    // public function settings() {
-    // 	$profile = new \app\models\Profile();
-    // 	$profile = $profile->get($_SESSION['user_id']);
-    // 	$user = new \app\models\User();
-    // 	$user = $user->get($_SESSION['username']);
-    // 	$this->view("/Profile/settings", ['profile'=>$profile, 'two_factor_authentication'=>$user->two_factor_authentication]);
-    // }
+    public function summaryReport() {
+        $contractor = new \app\models\Contractor();
+        $contractors = $contractor->getAllContractors();
+        $contractorCarRecord = new \app\models\ContractorCarRecord();
+        $contractorCarRecords = $contractorCarRecord->getAll();
+        $user = new \app\models\User();
+        $users = $user->getAll();
 
-    // #[\app\filters\Login]
-    // public function search($string){
-    // 	$profile = new \app\models\Profile();
-    // 	$profile = $profile->search($string);
-    // 	$this->view("/Profile/searchResults",$profile);
-    // }
+        $this->view('User/summaryReport', ['contractors' => $contractors, 'contractorCarRecords' => $contractorCarRecords, 'users' => $users]);
+    }
 
-    // #[\app\filters\Login]
-    // public function changePassword()
-    // {
-    //     $profile = new \app\models\Profile();
-    //     $profile = $profile->get($_SESSION['user_id']);
-    //     $user = new \app\models\User();
-    //     $user = $user->get($_SESSION['username']);
+    public function summaryReportPrint()
+    {
+        $contractor = new \app\models\Contractor();
+        $contractors = $contractor->getAllContractors();
+        $contractorCarRecord = new \app\models\ContractorCarRecord();
+        $contractorCarRecords = $contractorCarRecord->getAll();
+        $user = new \app\models\User();
+        $users = $user->getAll();
 
-
-    //     if (isset($_POST['action'])) {
-    //         if ($_POST['new_password'] == '' || $_POST['password_confirm'] == '') {
-    //             $this->view('User/changePassword', ['profile' => $profile, 'error' => 'The new password must not be empty']);
-    //             return;
-    //         }
-    //         if (password_verify($_POST['current_password'], $user->password_hash) && $_POST['new_password'] == $_POST['password_confirm']) {
-    //             $user->password = $_POST['new_password'];
-    //             // echo $user->password_hash;
-    //             $user->update();
-    //             header("Location:/Profile/index");
-    //         } else {
-    //             $this->view('User/changePassword', ['profile' => $profile, 'error' => 'The password(s) do not correspond']);
-    //         }
-    //     } else {
-    //         $this->view('User/changePassword', ['profile' => $profile]);
-    //     }
-    // }
+        $this->view('User/summaryReportPrint', ['contractors' => $contractors, 'contractorCarRecords' => $contractorCarRecords, 'users' => $users]);
+    }
 }

@@ -48,4 +48,12 @@ class User extends \app\core\Model
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(['password_hash' => $this->password_hash, 'username' => $this->username]); //associative array with key => value pairs
     }
+
+    public function getAll() {
+        $SQL = 'SELECT * FROM user';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute();
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
+        return $STMT->fetchAll();
+    }
 }

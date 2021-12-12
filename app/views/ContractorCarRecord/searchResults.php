@@ -30,6 +30,7 @@
     </ul>
 
     <a href="/ContractorCarRecord/index/<?php echo $data['contractor']->contractor_id ?>" class="grey-button">Go back</a><br><br>
+    <button style="border: none" class="right-print-button add-car-record" onclick="printDiv()">Print</button><br><br>
 
     <center>
         <table class="contractorCarRecord">
@@ -62,6 +63,56 @@
         ?>
         </table>
     </center>
+
+    <script>
+        function printDiv() {
+            var divContents = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
+            var divContents2 = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
+            divContents.style.marginLeft = 0;
+            divContents.style.marginRight = 0;
+            divContents.style.fontSize = "12px";
+
+            divContents2.style.marginLeft = 0;
+            divContents2.style.marginRight = 0;
+            divContents2.style.fontSize = "12px";
+
+            var tr = divContents.getElementsByTagName('td');
+            for (var i = 0; i < tr.length; i++) {
+                tr[i].style.height = 0;
+            }
+            var th = divContents2.getElementsByTagName('th');
+            for (var i = 0; i < th.length; i++) {
+                th[i].style.height = 0;
+            }
+
+
+            var elements = divContents.getElementsByClassName("delete-row");
+            while (elements[0]) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+
+            var elements2 = divContents2.getElementsByClassName("delete-row");
+            while (elements2[0]) {
+                elements2[0].parentNode.removeChild(elements2[0]);
+            }
+            var a = window.open('', '');
+            a.document.write('<html>');
+            a.document.write('<head>');
+            a.document.write('<title>Results</title>');
+            a.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">');
+            a.document.write('<link rel="preconnect" href="https://fonts.googleapis.com">');
+            a.document.write('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+            a.document.write('<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">');
+            a.document.write('<link rel=\"stylesheet\" type=\"text/css\" href="\\app\\css\\styles.css\" />');
+            a.document.write('</head>');
+            a.document.write('<body> <center>');
+            a.document.write(divContents2.outerHTML);
+            a.document.write(divContents.outerHTML);
+            a.document.write('</center></body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
 </body>
 
 </html>

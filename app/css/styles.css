@@ -63,10 +63,6 @@ input[type="submit"].login-button {
     border-radius: 0rem;
 }
 
-/* .welcome {
-
-} */
-
 .navigation-bar {
     background-color: #e61610; 
     font-size: 3em; 
@@ -114,6 +110,19 @@ div.white-box-2 {
     text-decoration: none;
     display: table;
     border-radius: 5px;
+}
+
+.user-index-print {
+    font-size: 1.5vh;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 5px;
+    color: black !important;
+    font-weight: 500;
+}
+.user-index-print:hover {
+    color: white !important;
 }
 
 .grey-button:hover {
@@ -390,4 +399,19 @@ input[name='yes']:hover {
 
 input[name='no']:hover {
     background: #7e0e0a !important;
+}
+
+.table-title {
+    margin-left: 5em;
+}
+
+
+table.print td, table.print th {
+    height: 0;
+}
+
+table.print {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 12px;
 }

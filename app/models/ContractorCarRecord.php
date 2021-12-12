@@ -26,6 +26,14 @@ class ContractorCarRecord extends \app\core\Model
         return $STMT->fetchAll(); //return the record
     }
 
+    public function getAll() {
+        $SQL = "SELECT * FROM contractor_car_record";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute();
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\ContractorCarRecord');
+        return $STMT->fetchAll(); //return the record
+    }
+
     public function getRecordById($contractor_car_record_id) {
         $SQL = "SELECT * FROM contractor_car_record WHERE contractor_car_record_id = :contractor_car_record_id";
         $STMT = self::$_connection->prepare($SQL);
@@ -70,49 +78,4 @@ class ContractorCarRecord extends \app\core\Model
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\ContractorCarRecord');
         return $STMT->fetchAll(); //return the record
     }
-
-    // public function get($username)
-    // {
-    //     $SQL = 'SELECT * FROM user WHERE username LIKE :username';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute(['username' => $username]);
-    //     $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
-    //     return $STMT->fetch(); //return the record
-    // }
-
-    // public function getAllContractors()
-    // {
-    //     $SQL = 'SELECT * FROM contractor';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute();
-    //     $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Contractor');
-    //     return $STMT->fetchAll(); //return the record
-    // }
-
-    // public function getContractorByName($company_name)
-    // {
-    //     $SQL = 'SELECT * FROM contractor where company_name = :company_name';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute(['company_name' => $company_name]);
-    //     $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Contractor');
-    //     return $STMT->fetch(); //return the record
-    // }
-
-    // public function delete()
-    // {
-    //     $SQL = 'DELETE FROM contractor_car_record where contractor_id = :contractor_id';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute(['contractor_id' => $this->contractor_id]);
-
-    //     $SQL = 'DELETE FROM  contractor where contractor_id = :contractor_id';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute(['contractor_id' => $this->contractor_id]);
-    // }
-
-    // public function insert()
-    // {
-    //     $SQL = 'INSERT INTO contractor(company_name) VALUES (:company_name)';
-    //     $STMT = self::$_connection->prepare($SQL);
-    //     $STMT->execute(['company_name' => $this->company_name]); //associative array with key => value pairs
-    // }
 }

@@ -129,31 +129,31 @@
     <!-- <button onclick="printPage('/ContractorCarRecord/index/2')"></button> -->
 
     <script>
-        function closePrint() {
-            document.body.removeChild(this.container);
-        }
+        // function closePrint() {
+        //     document.body.removeChild(this.container);
+        // }
 
-        function setPrint() {
-            this.contentWindow.container = this;
-            this.contentWindow.onbeforeunload = closePrint;
-            this.contentWindow.onafterprint = closePrint;
-            this.contentWindow.focus(); // Required for IE
-            this.contentWindow.print();
-        }
+        // function setPrint() {
+        //     this.contentWindow.container = this;
+        //     this.contentWindow.onbeforeunload = closePrint;
+        //     this.contentWindow.onafterprint = closePrint;
+        //     this.contentWindow.focus(); // Required for IE
+        //     this.contentWindow.print();
+        // }
 
-        function printPage(sURL) {
-            var oHideFrame = document.createElement("iframe");
-            oHideFrame.onload = setPrint;
-            oHideFrame.style.position = "fixed";
-            oHideFrame.style.right = "0";
-            oHideFrame.style.bottom = "0";
-            oHideFrame.style.width = "0";
-            oHideFrame.style.height = "0";
-            oHideFrame.style.border = "0";
-            oHideFrame.src = sURL;
-            document.body.appendChild(oHideFrame);
-            // oHideFrame.contentWindow.document.execCommand('print', false, null);
-        }
+        // function printPage(sURL) {
+        //     var oHideFrame = document.createElement("iframe");
+        //     oHideFrame.onload = setPrint;
+        //     oHideFrame.style.position = "fixed";
+        //     oHideFrame.style.right = "0";
+        //     oHideFrame.style.bottom = "0";
+        //     oHideFrame.style.width = "0";
+        //     oHideFrame.style.height = "0";
+        //     oHideFrame.style.border = "0";
+        //     oHideFrame.src = sURL;
+        //     document.body.appendChild(oHideFrame);
+        //     // oHideFrame.contentWindow.document.execCommand('print', false, null);
+        // }
 
         function printDiv() {
             // var divContents = $('.carRecordData');
@@ -186,17 +186,10 @@
             while (elements2[0]) {
                 elements2[0].parentNode.removeChild(elements2[0]);
             }
-            // divContents.style.marginLeft = 0;
-            // divContents.style.marginRight = 0
-            // divContents = divContents.html();
-            // <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            // <link rel="preconnect" href="https://fonts.googleapis.com">
-            // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            // <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-            // <link rel="stylesheet" type="text/css" href="\app\css\styles.css" />
             var a = window.open('', '');
             a.document.write('<html>');
             a.document.write('<head>');
+            a.document.write('<title>Contractor Car Records</title>');
             a.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">');
             a.document.write('<link rel="preconnect" href="https://fonts.googleapis.com">');
             a.document.write('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
@@ -208,8 +201,6 @@
             a.document.write(divContents.outerHTML);
             a.document.write('</center></body></html>');
             a.document.close();
-            // divContents.style.marginLeft = 0;
-            // divContents.style.marginRight = 0;
             a.print();
         }
     </script>
