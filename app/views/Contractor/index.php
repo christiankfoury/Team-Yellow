@@ -33,50 +33,6 @@
         </div>
     </center>
     <a href="/Contractor/addContractor" class="grey-button">New Contractor? Click to add a contractor</a><br><br>
-
-    <!-- <div style="display: flex; flex-wrap: wrap;">
-            <div style="flex: 1;  border: 1px solid black; margin: 2em; text-align: center; padding: 15em 0em;">
-                <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a>
-            </div>
-            <div style="flex: 1;  border: 1px solid black; margin: 2em; text-align: center; padding: 15em 0em;">
-                <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a>
-            </div>
-        </div> -->
-
-    <!-- <a href='/ContractorCarRecord/index/2' style="font-size: 3vw; border-style: solid; padding: 10px; margin-left: 200px;">Honda</a>
-        <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a>
-        <a href='/ContractorCarRecord/index/2' style="font-size: 3vw">Honda</a> -->
-
-    <!-- <center>
-        <div style="flex-wrap: wrap;">
-            <div style="flex: 1; display: inline-block;">
-                <table style="width: fit-content;">
-                    <tr>
-                        <th class="contractor"><a href='/ContractorCarRecord/index/2' class="contractor">Honda</a></th>
-                    </tr>
-                    <tr>
-                        <td class="contractor"><a href='/Contractor/areYouSureDelete/' class="contractor">Delete</a></td>
-                    </tr>
-                </table>
-            </div>
-            <div style="flex: 1; display: inline-block;">
-                <table style="width: fit-content;">
-                    <tr>
-                        <th class="contractor"><a href='/ContractorCarRecord/index/2' class="contractor">Honda</a></th>
-                    </tr>
-                    <tr>
-                        <td class="contractor"><a href='/Contractor/areYouSureDelete/' class="contractor">Delete</a></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </center> -->
-
-    <!-- PUT PADDING ON TD, TH, A -->
-
-    <!-- display table cell -->
-
-
     <center>
         <div style="flex-wrap: wrap;">
             <?php
@@ -91,12 +47,9 @@
                         <td class=\"contractor\"><a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}' class=\"contractor\">Delete</a></td>
                     </tr>
                 </table></div>";
-                    // echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
-                    // echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
                 }
             }
             ?>
-            <!-- <a href=" /ContractorCarRecord/index/">Logout</a><br> -->
         </div>
     </center>
 </body>

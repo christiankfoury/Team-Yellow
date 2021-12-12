@@ -59,13 +59,6 @@
             </form>
         </div>
     </center>
-
-    <!-- <form action='' method='post'>
-        Current password: <input type='password' name='current_password' /><br>
-        New Password: <input type='password' name='new_password' /><br>
-        Password confirmation: <input type='password' name='password_confirm' /><br>
-        <input type='submit' name='action' value='Update' />
-    </form> -->
 </body>
 
 </html>

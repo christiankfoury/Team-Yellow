@@ -33,7 +33,6 @@
             <h2>Records for <?php echo $data['contractor']->company_name ?></h2>
         </div>
     </div>
-    <!-- <h1></h1> -->
 
     <?php
     if (isset($data['error'])) {
@@ -73,7 +72,6 @@
                 <th class="delete-row">Action</th>
             </tr>
         </table>
-        <!-- <div id="table1"> -->
         <?php
         if ($data['records'] != null) {
             echo "<table class=\"carRecordData\">";
@@ -85,104 +83,42 @@
                 echo "<td>" . $record->date . "</td>";
                 echo "<td class='delete-row'><a class='edit-button' href='/ContractorCarRecord/editRecord/" . $record->contractor_car_record_id . "'>Edit</a></td>";
                 echo "<td class='delete-row'><a class='edit-button delete-button' href='/ContractorCarRecord/deleteRecord/{$data['contractor']->contractor_id}/" . $record->contractor_car_record_id . "'>Delete</a></td>";
-                // echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
-                // echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
                 echo "</tr>";
             }
             echo "</table>";
         }
         ?>
-        <!-- </div> -->
     </center>
-    <!-- </table> -->
-    <!-- <center>
-        <table class="contractorCarRecord">
-            <tr>
-                <th>Employee ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Age</th>
-            </tr>
-        </table>
-        <table class="carRecordData">
-            <tr>
-                <td class="borderStyleCarRecord">10001</td>
-                <td>Thomas</td>
-                <td>M</td>
-                <td>32</td>
-            </tr>
-            <tr>
-                <td class="borderStyleCarRecord">10002</td>
-                <td>Sally</td>
-                <td>F</td>
-                <td>28</td>
-            </tr>
-            <tr>
-                <td class="borderStyleCarRecord">10003</td>
-                <td>Anthony</td>
-                <td>M</td>
-                <td>24</td>
-            </tr>
-        </table>
-    </center> -->
-
-    <!-- <button onclick="printPage('/ContractorCarRecord/index/2')"></button> -->
 
     <script>
-        // function closePrint() {
-        //     document.body.removeChild(this.container);
-        // }
-
-        // function setPrint() {
-        //     this.contentWindow.container = this;
-        //     this.contentWindow.onbeforeunload = closePrint;
-        //     this.contentWindow.onafterprint = closePrint;
-        //     this.contentWindow.focus(); // Required for IE
-        //     this.contentWindow.print();
-        // }
-
-        // function printPage(sURL) {
-        //     var oHideFrame = document.createElement("iframe");
-        //     oHideFrame.onload = setPrint;
-        //     oHideFrame.style.position = "fixed";
-        //     oHideFrame.style.right = "0";
-        //     oHideFrame.style.bottom = "0";
-        //     oHideFrame.style.width = "0";
-        //     oHideFrame.style.height = "0";
-        //     oHideFrame.style.border = "0";
-        //     oHideFrame.src = sURL;
-        //     document.body.appendChild(oHideFrame);
-        //     // oHideFrame.contentWindow.document.execCommand('print', false, null);
-        // }
 
         function printDiv() {
-            // var divContents = $('.carRecordData');
-            var divContents = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
-            var divContents2 = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
-            divContents.style.marginLeft = 0;
-            divContents.style.marginRight = 0;
-            divContents.style.fontSize = "12px";
+            var tableData = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
+            var tableHeader = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
+            tableData.style.marginLeft = 0;
+            tableData.style.marginRight = 0;
+            tableData.style.fontSize = "12px";
 
-            divContents2.style.marginLeft = 0;
-            divContents2.style.marginRight = 0;
-            divContents2.style.fontSize = "12px";
+            tableHeader.style.marginLeft = 0;
+            tableHeader.style.marginRight = 0;
+            tableHeader.style.fontSize = "12px";
 
-            var tr = divContents.getElementsByTagName('td');
+            var tr = tableData.getElementsByTagName('td');
             for (var i = 0; i < tr.length; i++) {
                 tr[i].style.height = 0;
             }
-            var th = divContents2.getElementsByTagName('th');
+            var th = tableHeader.getElementsByTagName('th');
             for (var i = 0; i < th.length; i++) {
                 th[i].style.height = 0;
             }
 
 
-            var elements = divContents.getElementsByClassName("delete-row");
+            var elements = tableData.getElementsByClassName("delete-row");
             while (elements[0]) {
                 elements[0].parentNode.removeChild(elements[0]);
             }
 
-            var elements2 = divContents2.getElementsByClassName("delete-row");
+            var elements2 = tableHeader.getElementsByClassName("delete-row");
             while (elements2[0]) {
                 elements2[0].parentNode.removeChild(elements2[0]);
             }
@@ -197,8 +133,8 @@
             a.document.write('<link rel=\"stylesheet\" type=\"text/css\" href="\\app\\css\\styles.css\" />');
             a.document.write('</head>');
             a.document.write('<body> <center>');
-            a.document.write(divContents2.outerHTML);
-            a.document.write(divContents.outerHTML);
+            a.document.write(tableHeader.outerHTML);
+            a.document.write(tableData.outerHTML);
             a.document.write('</center></body></html>');
             a.document.close();
             a.print();

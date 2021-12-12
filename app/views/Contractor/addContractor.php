@@ -49,13 +49,6 @@
             </form>
         </div>
     </center>
-    <!-- width: fit-content;
-    text-align: left;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-100%); -->
 
 </body>
 

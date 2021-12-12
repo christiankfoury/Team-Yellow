@@ -10,11 +10,6 @@
 </head>
 
 <body>
-    <!-- <a href="/User/index">Home</a><br>
-    <a href="/Contractor/index">Contractors</a><br>
-    <a href="/User/detailingCustomer" onclick="return false">Detailing Customers</a><br>
-    <a href="/User/accountManagement">Account Management</a><br>
-    <a href="/User/logout">Logout</a><br> -->
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
             <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
@@ -36,52 +31,35 @@
         <h1 class="login-title" style="color: black; margin-top: 10%;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
     </center>
     <center>
-        <a href="/User/summaryReport" style="border: none;" class="add-car-record user-index-print">Click here for summary report</a><br><br>
+        <button style="border: none;" class="add-car-record user-index-print" onclick="printView('/User/summaryReportPrint')">Print Summary Report</button><br><br>
     </center>
-
-    <!-- <h1></h1> -->
-    <!-- <button onclick="printPage('/ContractorCarRecord/index/2')"></button> -->
-
-
 </body>
 
-<!-- <script>
+<script>
     function closePrint() {
         document.body.removeChild(this.container);
     }
 
     function setPrint() {
-        this.contentWindow.container = this;
-        this.contentWindow.onbeforeunload = closePrint;
-        this.contentWindow.onafterprint = closePrint;
-        this.contentWindow.focus(); // Required for IE
-        this.contentWindow.print();
+        this.newWindow.container = this;
+        this.newWindow.onbeforeunload = closePrint;
+        this.newWindow.onafterprint = closePrint;
+        this.newWindow.focus(); // Required for IE 
+        this.newWindow.print();
     }
 
-    function printPage(sURL) {
-        var oHideFrame = document.createElement("iframe");
-        oHideFrame.onload = setPrint;
-        oHideFrame.style.position = "fixed";
-        oHideFrame.style.right = "0";
-        oHideFrame.style.bottom = "0";
-        oHideFrame.style.width = "0";
-        oHideFrame.style.height = "0";
-        oHideFrame.style.border = "0";
-        oHideFrame.src = sURL;
-        document.body.appendChild(oHideFrame);
-        // oHideFrame.contentWindow.document.execCommand('print', false, null);
+    function printView(viewUrl) {
+        var iFrameElement = document.createElement("iframe");
+        iFrameElement.onload = setPrint;
+        iFrameElement.style.position = "fixed";
+        iFrameElement.style.right = "0";
+        iFrameElement.style.bottom = "0";
+        iFrameElement.style.width = "0";
+        iFrameElement.style.height = "0";
+        iFrameElement.style.border = "0";
+        iFrameElement.src = viewUrl;
+        document.body.appendChild(iFrameElement);
     }
-
-    function printDiv() {
-        var divContents = document.getElementById("carRecordData").innerHTML;
-        var a = window.open('', '');
-        a.document.write('<html>');
-        a.document.write('<body> <center>');
-        a.document.write(divContents);
-        a.document.write('</center></body></html>');
-        a.document.close();
-        a.print();
-    }
-</script> -->
+</script>
 
 </html>

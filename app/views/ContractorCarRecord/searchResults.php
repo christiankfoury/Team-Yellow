@@ -54,8 +54,6 @@
                 echo "<td>" . $record->date . "</td>";
                 echo "<td class='delete-row'><a class='edit-button' href='/ContractorCarRecord/editRecord/" . $record->contractor_car_record_id . "'>Edit</a></td>";
                 echo "<td class='delete-row'><a class='edit-button delete-button' href='/ContractorCarRecord/deleteRecord/{$data['contractor']->contractor_id}/" . $record->contractor_car_record_id . "'>Delete</a></td>";
-                // echo "<a href='/ContractorCarRecord/index/{$contractor->contractor_id}'>{$contractor->company_name}</a><br>";
-                // echo "<a href='/Contractor/areYouSureDelete/{$contractor->contractor_id}/{$contractor->company_name}'>Delete</a><br><br>";
                 echo "</tr>";
             }
             echo "</table>";
@@ -66,32 +64,32 @@
 
     <script>
         function printDiv() {
-            var divContents = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
-            var divContents2 = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
-            divContents.style.marginLeft = 0;
-            divContents.style.marginRight = 0;
-            divContents.style.fontSize = "12px";
+            var tableData = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
+            var tableHeader = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);
+            tableData.style.marginLeft = 0;
+            tableData.style.marginRight = 0;
+            tableData.style.fontSize = "12px";
 
-            divContents2.style.marginLeft = 0;
-            divContents2.style.marginRight = 0;
-            divContents2.style.fontSize = "12px";
+            tableHeader.style.marginLeft = 0;
+            tableHeader.style.marginRight = 0;
+            tableHeader.style.fontSize = "12px";
 
-            var tr = divContents.getElementsByTagName('td');
+            var tr = tableData.getElementsByTagName('td');
             for (var i = 0; i < tr.length; i++) {
                 tr[i].style.height = 0;
             }
-            var th = divContents2.getElementsByTagName('th');
+            var th = tableHeader.getElementsByTagName('th');
             for (var i = 0; i < th.length; i++) {
                 th[i].style.height = 0;
             }
 
 
-            var elements = divContents.getElementsByClassName("delete-row");
+            var elements = tableData.getElementsByClassName("delete-row");
             while (elements[0]) {
                 elements[0].parentNode.removeChild(elements[0]);
             }
 
-            var elements2 = divContents2.getElementsByClassName("delete-row");
+            var elements2 = tableHeader.getElementsByClassName("delete-row");
             while (elements2[0]) {
                 elements2[0].parentNode.removeChild(elements2[0]);
             }
@@ -106,8 +104,8 @@
             a.document.write('<link rel=\"stylesheet\" type=\"text/css\" href="\\app\\css\\styles.css\" />');
             a.document.write('</head>');
             a.document.write('<body> <center>');
-            a.document.write(divContents2.outerHTML);
-            a.document.write(divContents.outerHTML);
+            a.document.write(tableHeader.outerHTML);
+            a.document.write(tableData.outerHTML);
             a.document.write('</center></body></html>');
             a.document.close();
             a.print();

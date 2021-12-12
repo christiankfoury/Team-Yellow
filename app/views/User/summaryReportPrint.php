@@ -24,7 +24,6 @@
             <th>Type</th>
         </tr>
     </table>
-    <!-- <div id="table1"> -->
     <?php
     if ($data['users'] != null) {
         echo "<table class=\"carRecordData print\" style='margin-bottom: 50px;'>";
@@ -45,7 +44,6 @@
         echo "</table>";
     }
     ?>
-    <!-- </div> -->
 </center>
 
 
@@ -59,7 +57,6 @@
             <th>Company Name</th>
         </tr>
     </table>
-    <!-- <div id="table1"> -->
     <?php
     if ($data['contractors'] != null) {
         echo "<table class=\"carRecordData print\" style='margin-bottom: 50px;'>";
@@ -72,7 +69,6 @@
         echo "</table>";
     }
     ?>
-    <!-- </div> -->
 </center>
 
 
@@ -91,7 +87,6 @@
             <th>Added by</th>
         </tr>
     </table>
-    <!-- <div id="table1"> -->
     <?php
     if ($data['contractorCarRecords'] != null) {
         echo "<table class=\"carRecordData print\">";
@@ -111,7 +106,6 @@
         echo "</table>";
     }
     ?>
-    <!-- </div> -->
 </center>
 
 </body>
