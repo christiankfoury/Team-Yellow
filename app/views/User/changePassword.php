@@ -40,7 +40,7 @@
 
     <?php
     if (isset($data['error'])) {
-        echo $data['error'];
+        echo '<div class="alert alert-danger" role="alert">' . $data['error'] . '</div>';
     }
     ?>
 

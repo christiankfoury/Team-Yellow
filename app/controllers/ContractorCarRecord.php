@@ -30,7 +30,7 @@ class ContractorCarRecord extends \app\core\Controller
                 }
             }
         } else if (isset($_POST['action2'])) {
-            if (strtotime($_POST['starting_date']) > 0 || strtotime($_POST['ending_date']) > 0) {
+            if (strtotime($_POST['starting_date']) > 0 && strtotime($_POST['ending_date']) > 0) {
                 $contractorCarRecord = new \app\models\ContractorCarRecord();
                 $resultsRecords = $contractorCarRecord->getRecordsBetweenDates($_POST['starting_date'], $_POST['ending_date'], $contractor_id);
                 if (count($resultsRecords) == 0) {

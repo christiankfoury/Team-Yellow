@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2021 at 06:26 PM
+-- Generation Time: Dec 13, 2021 at 01:22 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -35,6 +35,17 @@ CREATE TABLE `contractor` (
   `company_name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contractor`
+--
+
+INSERT INTO `contractor` (`contractor_id`, `company_name`) VALUES
+(9, 'Honda'),
+(10, 'Bodyshop'),
+(11, 'Toyota'),
+(12, 'Acura'),
+(13, 'Lexus');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +62,22 @@ CREATE TABLE `contractor_car_record` (
   `contractor_id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contractor_car_record`
+--
+
+INSERT INTO `contractor_car_record` (`contractor_car_record_id`, `courtesy_number`, `car_specification`, `job_type`, `date`, `contractor_id`, `username`) VALUES
+(14, '655555', 'Civic', 'Detailing', '2021-11-25', 9, 'admin1'),
+(15, '456', 'Accord', 'Casual Wash', '2021-12-16', 9, 'admin1'),
+(16, '5981', 'BMW 328i', 'Interior Detailing', '2021-12-14', 10, 'admin1'),
+(17, 'Nissan', 'Rogue', 'Exterior', '2021-12-15', 10, 'admin1'),
+(18, '8135', 'Corolla', 'Waxing', '2021-12-08', 11, 'admin1'),
+(19, '578', 'Camry', 'Detailing', '2021-12-09', 11, 'admin1'),
+(20, '8711', 'MDX', 'Polishing', '2021-11-16', 12, 'admin1'),
+(21, '5784', 'RDX', 'Steam Cleaning', '2021-11-18', 12, 'admin1'),
+(22, '1285', 'RX 350', 'Detailing', '2021-11-11', 13, 'admin1'),
+(23, '6894', 'IS 350', 'Waxing', '2021-11-06', 13, 'admin1');
 
 -- --------------------------------------------------------
 
@@ -86,6 +113,17 @@ CREATE TABLE `user` (
   `two_factor_token` int(20) DEFAULT NULL,
   `type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `first_name`, `last_name`, `password_hash`, `two_factor_token`, `type`) VALUES
+('admin1', 'Thilshan', 'Shunmugalingam', '$2y$10$OzEoz5H5LC5UVti8qdyqA.gYWvbFAW4OFJ/SvzTLeegLYqRWMPzFK', NULL, 'admin'),
+('admin2', 'Rob', 'Brown', '$2y$10$F8M/mjb5KLbR/wtBHKcTdOErAHQQms8cAVYEr7B6eLOQLhb1LBTaK', NULL, 'admin'),
+('admin3', 'Larry', 'Smith', '$2y$10$F8M/mjb5KLbR/wtBHKcTdOErAHQQms8cAVYEr7B6eLOQLhb1LBTaK', NULL, 'admin'),
+('admin4', 'Maria', 'Williams', '$2y$10$F8M/mjb5KLbR/wtBHKcTdOErAHQQms8cAVYEr7B6eLOQLhb1LBTaK', NULL, 'admin'),
+('admin5', 'Patricia', 'Miller', '$2y$10$F8M/mjb5KLbR/wtBHKcTdOErAHQQms8cAVYEr7B6eLOQLhb1LBTaK', NULL, 'admin');
 
 --
 -- Indexes for dumped tables
@@ -126,13 +164,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `contractor`
 --
 ALTER TABLE `contractor`
-  MODIFY `contractor_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contractor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `contractor_car_record`
 --
 ALTER TABLE `contractor_car_record`
-  MODIFY `contractor_car_record_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contractor_car_record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `customer_record`

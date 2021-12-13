@@ -64,9 +64,9 @@ class ContractorCarRecord extends \app\core\Model
     }
 
     public function getRecordsByCourtesyNumber($courtesy_number, $contractor_id) {
-        $SQL = "SELECT * FROM contractor_car_record WHERE courtesy_number = :courtesy_number AND contractor_id = :contractor_id";
+        $SQL = "SELECT * FROM contractor_car_record WHERE courtesy_number LIKE :courtesy_number AND contractor_id = :contractor_id";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(['courtesy_number' => $courtesy_number, 'contractor_id' => $contractor_id]);
+        $STMT->execute(['courtesy_number' => "%$courtesy_number%", 'contractor_id' => $contractor_id]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\ContractorCarRecord');
         return $STMT->fetchAll(); //return the record
     }

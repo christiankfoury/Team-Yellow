@@ -416,3 +416,9 @@ table.print {
     margin-right: 0;
     font-size: 12px;
 }
+
+.search-filter:hover {
+    background-color: #c0c0c0;
+    color: black;
+    text-decoration: none;
+}

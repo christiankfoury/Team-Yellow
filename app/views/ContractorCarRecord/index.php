@@ -49,7 +49,7 @@
             Search by courtesy number:
         </label>
         <input class="no-border" type='text' name='courtesy_number' style='border-top-right-radius: 0px; border-bottom-right-radius: 0px;' placeholder="Courtesy Number" />
-        <input class="no-border" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action' value='Search' />
+        <input class="no-border search-filter" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action' value='Search' />
     </form>
 
     <form action='' method='post' class="right-form">
@@ -57,7 +57,7 @@
         <input class="no-border" type='text' name='starting_date' placeholder="Select a date" onfocus="(this.type='date')" />
         <label for="" style="color: white; margin-left: 5px; margin-right: 5px"> to </label>
         <input class="no-border" type='text' name='ending_date' style='border-top-right-radius: 0px; border-bottom-right-radius: 0px;' placeholder="Select a date" onfocus="(this.type='date')" />
-        <input class="no-border" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action2' value='Filter' />
+        <input class="no-border search-filter" type='submit' style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;' name='action2' value='Filter' />
     </form>
 
 
@@ -91,7 +91,6 @@
     </center>
 
     <script>
-
         function printTable() {
             var tableData = document.getElementsByClassName('carRecordData')[0].cloneNode(true);
             var tableHeader = document.getElementsByClassName('contractorCarRecord')[0].cloneNode(true);

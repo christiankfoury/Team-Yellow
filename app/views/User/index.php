@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <!-- <a href="/User/index">Home</a><br>
+    <a href="/Contractor/index">Contractors</a><br>
+    <a href="/User/detailingCustomer" onclick="return false">Detailing Customers</a><br>
+    <a href="/User/accountManagement">Account Management</a><br>
+    <a href="/User/logout">Logout</a><br> -->
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
             <a class="nav-link active" style="background-color: #b70f0a;" href="/User/index">Home</a>
@@ -31,8 +36,14 @@
         <h1 class="login-title" style="color: black; margin-top: 10%;"><?php echo "Welcome {$_SESSION['first_name']} {$_SESSION['last_name']}!" ?></h1>
     </center>
     <center>
+        <!-- <a href="/User/summaryReport" style="border: none;" class="add-car-record user-index-print">Click here for summary report</a><br><br> -->
         <button style="border: none;" class="add-car-record user-index-print" onclick="printView('/User/summaryReportPrint')">Print Summary Report</button><br><br>
     </center>
+
+    <!-- <h1></h1> -->
+    <!-- <button onclick="printView('/ContractorCarRecord/index/2')"></button> -->
+
+
 </body>
 
 <script>
@@ -41,11 +52,11 @@
     }
 
     function setPrint() {
-        this.newWindow.container = this;
-        this.newWindow.onbeforeunload = closePrint;
-        this.newWindow.onafterprint = closePrint;
-        this.newWindow.focus(); // Required for IE 
-        this.newWindow.print();
+        this.contentWindow.container = this;
+        this.contentWindow.onbeforeunload = closePrint;
+        this.contentWindow.onafterprint = closePrint;
+        this.contentWindow.focus(); // Required for IE 
+        this.contentWindow.print();
     }
 
     function printView(viewUrl) {
